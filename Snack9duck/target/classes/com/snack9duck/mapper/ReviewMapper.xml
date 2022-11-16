@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.snack9duck.mapper.ReviewMapper">
+ <select id="getReview" resultType="com.snack9duck.domain.ReviewVO">
+ 	select * from review where prodnum=#{prodnum}
+ </select>
+ <select id="allReview"  resultType="com.snack9duck.domain.ReviewVO">
+ 	select * from review order by indate desc
+ </select>
+ <insert id="insertReview" parameterType="com.snack9duck.domain.ReviewVO">
+ 	INSERT INTO review(rnum, id, prodnum, content)
+	values (review_seq.nextval, #{id}, #{prodnum}, #{content})
+ </insert>
+ <update id="updateReview">
+	update review set content=#{content} where rnum=#{rnum}
+</update>
+ <delete id="deleteReview">
+	delete from review where rnum= #{rnum}
+</delete>
+ <select id="getReviewDetail" resultType="com.snack9duck.domain.ReviewVO">
+ 	select * from review where rnum=#{rnum}
+ </select>
+ 
+ <select id="lastReview" resultType="com.snack9duck.domain.ReviewVO">
+select rnum from (select * from review order by indate desc)where rownum=1
+</select>
+ </mapper>

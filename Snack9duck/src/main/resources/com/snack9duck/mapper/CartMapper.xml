@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.snack9duck.mapper.CartMapper">
+ 
+ 
+<!-- 유저 계정 내의 장바구니 정보 불러오기  -->
+<select id="listCart" resultType="com.snack9duck.domain.CartVO">
+   <![CDATA[select * from cart_view where id=#{id} order by cartnum desc]]>
+</select>
+
+<!--장바구니에서 선택 구독 버튼 선택 시 값 저장 -->
+<insert id="selectGudok">
+
+</insert>
+<!--유저 계정 장바구니 담기 -->
+<insert id="insertCart">
+	INSERT INTO cart(cartnum, id, prodnum, quantity)
+	values (cart_seq.nextval, #{id}, #{prodnum}, #{quantity})
+</insert>
+<insert id="insertSelectKey">
+	<selectKey keyProperty="cartnum" order="BEFORE" resultType="long">
+		select cart_seq.nextval from dual
+	</selectKey>
+</insert>
+
+<!-- 회원 아이디로 전체 상품 목록 얻어오기 -->
+<select id="selectCartByuserid" resultType="com.snack9duck.domain.CartVO">
+SELECT * FROM cart, product
+WHERE cart.prodnum = product.prodnum
+and cart.id = #{id}
+and cart.result = 1
+</select>
+
+<!-- 장바구니 삭제하기 -->
+<delete id="deleteCart">
+   delete cart where cartnum= #{cartnum} 
+</delete>
+<!-- 장바구니 전체 삭제하기 -->
+<delete id="deleteCart_All">
+   delete cart where id = #{id}
+</delete>
+<!-- 장바구니 선택 삭제하기 -->
+<delete id="selectDelete">
+   delete from cart where cartnum =#{cartnum}
+</delete>
+<!--  장바구니 수량 수정  -->
+<update id="modifyCount">
+	update cart
+	set quantity=#{quantity}
+	where cartnum = #{cartnum}
+</update>
+<select id="cartSelectOrder" resultType="com.snack9duck.domain.CartVO">
+	select prodnum, quantity from cart where cartnum=#{cartnum}
+</select>
+
+</mapper>

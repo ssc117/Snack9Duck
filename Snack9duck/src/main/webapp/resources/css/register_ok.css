@@ -1,0 +1,33 @@
+#title_font{
+  font-size: 50px;
+}
+#normal_font{
+ font-size: 20px; 
+}
+#ef_font{
+  color: #404040;
+  font-size: 30px;
+}
+.ok_wrap{
+  margin-bottom: 20px;
+  
+}
+.ok_main{
+  text-align: center;
+}
+#ok_duck{
+  width: 300px;
+  height: 300px;
+}
+.ok_button{
+  margin-top: 30px;
+  color: #FCFCFC !important;
+  background-color: #404040 !important;
+  border-color: #404040 !important;
+
+  width: 100% !important;
+  height: 54px !important;
+  max-width: 240px;
+  text-align: center;
+  cursor: pointer;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.snack9duck.mapper.QnaMapper">
+ <!--모든 QNA 불러오기 -->
+ <select id="getList" resultType="com.snack9duck.domain.QnaVO">
+<![CDATA[select * from qna where qseq > 0]]>
+</select>
+
+<!--유저가 자신이 올린 qna 리스트 확인 id값 받는 방법 확인 필요 -->
+<select id="getQnaList" resultType="com.snack9duck.domain.QnaVO"> 
+select * from qna where id=#{id} order by qseq desc
+</select>
+
+<!-- 유저 qna 등록하기 -->
+<insert id="insert">
+	INSERT INTO qna(qseq, type, subject, content, email, id)
+	values (qna_seq.nextval, #{type}, #{subject}, #{content}, #{email}, #{id})
+</insert>
+<insert id="insertSelectKey">
+	<selectKey keyProperty="qseq" order="BEFORE" resultType="long">
+		select qna_seq.nextval from dual
+	</selectKey>
+</insert>
+
+<!-- 하나의 qna 정보 얻기  -->
+<select id="read" resultType="com.snack9duck.domain.QnaVO">
+   <![CDATA[select * from qna where qseq = #{qseq}]]>
+</select>
+<!-- qna 답변하기 -->
+<update id="updateQnaAnswer">
+update qna set reply=#{reply} , rep='yes' where qseq=#{qseq}
+</update>
+
+<!-- qna 삭제하기 -->
+<delete id="delete">
+   delete from qna where qseq = #{qesq}
+</delete>
+<!-- qna 수정하기 -->
+<update id="update">
+	update qna
+	set type = #{type},
+		subject = #{subject},
+		content = #{content},
+		reply = #{reply},
+		email = #{email}
+	where qseq = #{qseq}
+</update>
+
+</mapper>

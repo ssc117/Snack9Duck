@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.snack9duck.mapper.OrderMapper">
+ <!--// 사용자가 장바구니에서 구독 버튼을 눌렀을 때 값을 가져오는거 -->
+ <select id="insertOrderList" resultType="com.snack9duck.domain.OrderVO">
+<![CDATA[select max(oseq) from orders]]>
+</select>
+
+<!-- 결제 완료 후 주문내역 등록하기 -->
+<insert id="insertOrderDetail">
+	INSERT INTO order_detail(odseq, oseq, prodnum, quantity)
+	values (order_detail_seq.nextval, #{oseq}, #{prodnum}, #{quantity})
+</insert>
+
+<insert id="insertOrder">
+insert into orders(oseq, id) values(orders_seq.nextval, #{id})
+</insert>
+
+<select id="listOrderById" resultType="com.snack9duck.domain.OrderVO">
+select * from order_view where id=#{id} and result like '%'||#{result}||'%' and oseq=#{oseq}
+</select>
+
+<select id="selectSeqOrdering" resultType="int">
+select distinct oseq from order_view where id=#{id} and result='2' order by oseq desc
+</select>
+
+<select id="listOrder" resultType="com.snack9duck.domain.OrderVO">
+select * from order_view where name like '%'||#{name}||'%' order by result, oseq desc
+</select>
+
+<update id="updateOrderResult">
+	update order_detail set result='2' where odseq=#{odseq}
+</update>
+
+<select id="orderDesc" resultType="com.snack9duck.domain.OrderVO">
+select oseq, id
+from (select * from orders order by oseq desc)
+where rownum=1
+</select>
+
+<select id="orderSession" resultType="com.snack9duck.domain.OrderVO">
+select * from order_view where odseq=#{odseq}
+</select>
+
+<select id="OrderPrice" resultType="com.snack9duck.domain.OrderVO">
+select price, quantity from order_view where odseq=#{odesq}
+</select>
+
+<!-- 구독관리에서 쓸 내용 -->
+<select id="orderViewList" resultType="com.snack9duck.domain.OrderVO">
+select * from order_view where id = #{id} and (result='2' or result='3' or result='4')
+</select>
+<delete id="orderCancel">
+delete from order_detail where odseq = #{odseq}
+</delete>
+
+<!-- 관리자 계정 구독내역 확인 -->
+<select id="adminOrderList" resultType="com.snack9duck.domain.OrderVO">
+select * from order_view where result='2' or result='3' or result='4'
+</select>
+
+<!--
+<select id="orderMember2" resultType="com.ssnack9duck.domain.OrderVO">
+select * from order where id=#{id}, name=#{name}, zip_code=#{zip_code}, addr1=#{addr1}, addr2=#{addr2}, addr3=#{addr3},
+phone1=#{phone1}, phone2=#{phone2}, phone3=#{phone3}, email1=#{email1}, email2=#{email2} 
+</select>
+-->
+</mapper>

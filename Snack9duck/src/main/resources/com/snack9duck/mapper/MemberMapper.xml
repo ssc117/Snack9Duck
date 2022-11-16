@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.snack9duck.mapper.MemberMapper">
+
+<select id="listAllMember" resultType="com.snack9duck.domain.MemberVO">
+	select * from member order by regdate desc
+</select>
+
+<select id="confirmID" resultType="int" >
+	<![CDATA[select count(*) from member where id = #{id}]]> 
+</select>
+
+<insert id="insertMember">
+	insert into member(id, pwd, name, email1, email2, zip_code, addr1, addr2, addr3,
+	phone1, phone2, phone3) 
+	values (#{id}, #{pwd}, #{name}, #{email1}, #{email2}, #{zip_code},
+	#{addr1}, #{addr2}, #{addr3}, #{phone1}, #{phone2}, #{phone3})
+</insert>
+
+<select id="getMember" resultType="com.snack9duck.domain.MemberVO">
+	<![CDATA[select * from member where id = #{id} and useyn='y']]>
+</select>
+
+<select id="findId" parameterType="com.snack9duck.domain.MemberVO" resultType="com.snack9duck.domain.MemberVO">
+	select * from member where name = #{name} and phone1 = #{phone1} 
+	and phone2 = #{phone2} and phone3 = #{phone3} and useyn='y'
+</select>
+<select id="findPwd" resultType="com.snack9duck.domain.MemberVO">
+	select * from member where name = #{name} and id = #{id} and phone1 = #{phone1}
+	and phone2 = #{phone2} and phone3 = #{phone3} and useyn='y'
+</select>
+<update id="updateMember">
+	update member
+	set pwd = #{pwd}, name = #{name}, email1 = #{email1}, email2 = #{email2}, 
+		zip_code = #{zip_code}, addr1 = #{addr1}, addr2 = #{addr2}, addr3 = #{addr3},
+		phone1 = #{phone1}, phone2 = #{phone2}, phone3 = #{phone3}
+	where id = #{id}
+</update>
+
+<update id="deleteMember" >
+	update member set useyn = 'N' where id=#{id}
+</update>
+
+<select id="listMember" resultType="com.snack9duck.domain.MemberVO">
+	select * from member where name like '%'||#{name}||'%' order by regdate desc
+</select>
+
+<select id="memberLogin" resultType="com.snack9duck.domain.MemberVO">
+	select * from member where id=#{id} and pwd = #{pwd} and useyn='y'
+</select>
+
+<delete id="multiDelete">
+	delete from member where id=#{id}
+</delete>
+
+<select id="registerForm" resultType="com.snack9duck.domain.MemberVO">
+select rownum, id, name
+from (select * from member order by regdate desc)
+where rownum=1
+</select>
+
+</mapper>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.snack9duck.mapper.ProductMapper">
+ <!--사용상태가 y인  상품 정보 모두 불러오기 -->
+ <select id="getList" resultType="com.snack9duck.domain.ProductVO">
+<![CDATA[select * from product where useyn='y']]>
+</select>
+<!-- 관리자용 상품 전체정보 불러오기 -->
+ <select id="getAllList" resultType="com.snack9duck.domain.ProductVO">
+<![CDATA[select * from product]]>
+</select>
+<!-- 상품 등록하기 -->
+<insert id="insert">
+	INSERT INTO product(prodnum, name, kind, price, content, image, detail_image, useyn)
+	values (product_seq.nextval, #{name}, #{kind}, #{price}, #{content}, #{image}, #{detail_image}, #{useyn})
+</insert>
+<insert id="insertSelectKey">
+	<selectKey keyProperty="prodnum" order="BEFORE" resultType="long">
+		select product_seq.nextval from dual
+	</selectKey>
+</insert>
+
+<!-- 하나의 상품 정보 얻기  -->
+<select id="read" resultType="com.snack9duck.domain.ProductVO">
+   <![CDATA[select * from product where prodnum = #{prodnum}]]>
+</select>
+<!-- 상품종류별 상품 리스트 얻어오기  -->
+<select id="listKindProduct" resultType="com.snack9duck.domain.ProductVO">
+<![CDATA[select * from product where kind= #{kind}]]>
+</select>
+<!-- 상품 삭제하기 -->
+<delete id="delete">
+   delete from product where prodnum = #{prodnum}
+</delete>
+<!-- 상품 정보 수정하기 -->
+<update id="update">
+	update product
+	set name = #{name},
+		kind = #{kind},
+		price = #{price},
+		content = #{content},
+		image = #{image},
+		detail_image = #{detail_image},
+		useyn = #{useyn}
+	where prodnum = #{prodnum}
+</update>
+
+</mapper>
