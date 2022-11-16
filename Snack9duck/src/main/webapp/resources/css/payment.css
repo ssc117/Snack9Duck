@@ -1,0 +1,122 @@
+th, td {
+	padding: 30px;
+    }
+.payment{
+  margin: auto;
+  width: 500px;
+  height: 1000px;
+  margin-bottom: 100px;
+}
+.payment_form{
+  display: none;
+      overflow: hidden;
+    font-size: 16px;
+    background-color: #f4f4f2;
+    padding: 27px 0;
+    width: 1300px;
+    margin:0 auto;
+}
+
+ 
+
+.add_edit{ 
+  width: 500px;
+  height: 300px;
+  margin-top: 50px;
+  margin: auto;
+  background-color: aqua;
+}
+
+div {
+  display: block;
+}
+.reg_input {
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
+  background: #fff;
+  border: 0 !important;
+  border-bottom: 1px solid #d8d9df !important;
+  vertical-align: top;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.zip_input {
+  padding: 0;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
+  background: #fff;
+  border: 0 !important;
+  border-bottom: 1px solid #d8d9df !important;
+  vertical-align: top;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.register_table #reg_name, .register_table #reg_zip {
+      width: 180px;
+  }
+.register_table tbody td {
+      line-height: 50px;
+      padding: 3px 0;
+      font-size: 14px;
+      color: #2d2f43;
+      font-weight: 400;
+      background-color: #fff;
+      border: 0;
+      vertical-align: top;
+      text-align: left;
+      word-break: break-all;
+      word-wrap: break-word;
+}
+.register_table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+.policy_checkbox{
+  padding-left: 100px;
+}
+
+
+#caption_id{
+  font-weight: bold;
+}
+.reg_btn{
+ margin-left: 200px;
+}
+.reg_button{
+   
+  color: #FCFCFC !important;
+  background-color: #404040 !important;
+  border-color: #404040 !important;
+
+  width: 100% !important;
+  height: 54px !important;
+  max-width: 240px;
+  text-align: center;
+  cursor: pointer;
+}
+.zip_button{
+  
+  margin-left: 30px;
+  color: #FCFCFC !important;
+  background-color: #404040 !important;
+  border-color: #404040 !important;
+
+  width: 100% !important;
+  height: 50px !important;
+  max-width: 130px;
+  text-align: center;
+  cursor: pointer;
+}
+

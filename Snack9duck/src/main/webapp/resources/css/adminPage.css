@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.admin_wrap{
+	margin-top:100px;
+	padding-left:290px;
+	padding-right:290px;
+	margin-bottom:100px;
+}
+.all_setting{
+	text-align: center;
+}
+h2{
+	color:red;
+}

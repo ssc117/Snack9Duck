@@ -1,0 +1,27 @@
+.cancelContainer{
+    width: 600px;
+    
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: block;
+}
+.cancel_btn{
+    width: 200px;
+	height: 40px;
+	margin: auto;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	color: white;
+	background: #000;
+	font-size: 18px;
+	cursor: pointer;
+}
+.cancelPage{
+    margin-left: 570px;
+    margin-right: 100px;
+    margin-top: 150px;
+    margin-bottom: 300px;
+}
