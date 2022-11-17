@@ -22,30 +22,35 @@
 	<!-- BODY-->
 	<div id="QNA_wrap">
 		<aside>
-			<div class="management">
-				<div id="mypage_title">
-					<a class="text_deco">마이페이지</a>
-				</div>
-				<br>
-				<div class="mypage_list">
-					<a class="text_deco" href="#">구독 관리</a>
-				</div>
-				<div class="mypage_list">
-					<a class="text_deco" href="/qna/qnaList">1:1문의</a>
-				</div>
-				<div class="mypage_list">
-					<a class="text_deco" href="/member/my_page_form">회원정보 수정</a>
-					</li>
-				</div>
-				<br>
-				<!-- <div id="mypage_title">게시판</div> -->
-				<div class="mypage_list">
-					<a class="text_deco" href="/notice/notice_main">공지사항</a>
-				</div>
-				<div class="mypage_list">
-					<a class="text_deco" href="/event/event_main">이벤트</a>
-				</div>
+			 <div class="management">
+			<div id="mypage_title">
+				<a class="text_deco">마이페이지</a>
 			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/gudok_setting">구독 관리</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/cart/cart">장바구니</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/qna/qnaList">1:1문의</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/my_page_form">회원정보 수정</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/notice/notice_main">공지사항</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/event/event_main">이벤트</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/logout">로그아웃</a>
+			</div>
+		</div>
 		</aside>
 
 		<form name="form" method="post" action="/qna/qnaWrite">

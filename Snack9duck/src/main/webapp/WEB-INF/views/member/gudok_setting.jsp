@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/resources/css/gudok_setting.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../static/js/includeHTML.js"></script>
+    <!-- <script src="../static/js/includeHTML.js"></script>  -->
     <!-- 부트스트랩 css 추가 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,7 +26,38 @@
 <!-- header -->
 
     <!-- body 시작-->
-
+    <div class="mypage_all">
+	
+         <div class="management">
+			<div id="mypage_title">
+				<a class="text_deco">마이페이지</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/gudok_setting">구독 관리</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/cart/cart">장바구니</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/qna/qnaList">1:1문의</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/my_page_form">회원정보 수정</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/notice/notice_main">공지사항</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/event/event_main">이벤트</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/logout">로그아웃</a>
+			</div>
+		</div>
+      
     <section class="cart">
         <div class="cart__information">
             <ul>
@@ -110,7 +141,7 @@
     </ul>
 </div>
 
-
+</div>
 <!-- Paging End -->
 
 <form id='actionForm' action="/member/gudok_setting" method='get'>

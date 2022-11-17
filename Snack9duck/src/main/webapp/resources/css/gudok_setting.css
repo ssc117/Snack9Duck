@@ -1,6 +1,50 @@
 body {
   margin: 0;
 }
+#mypage_all{
+    display: flex; 
+    width: 1200px; 
+    margin: auto;    
+}
+.management {
+    
+    width: 200px;
+    height:500px;
+    margin-top: 50px;
+    margin-right: 60px;
+    
+    padding: 30px 20px;
+    
+    background: #fff;
+    border: 1px solid #d8d9de;
+    border-radius: 4px;
+    justify-content :center;
+    
+    
+}
+.text_deco{
+    text-decoration-line: none;
+    color: black;
+}
+#mypage_title{
+    width:max-content;
+    height: max-content;
+    
+    font-size: 30px;
+    font-weight: bold;
+    
+    
+}
+.mypage_list{
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.mypage_list:hover{
+    background-color: rgba(236, 236, 185, 0.658);
+}
+
 
 .pagination{
 	justify-content : center;

@@ -25,7 +25,7 @@
 	<!-- 업로드 패스 설정 -->
 	<beans:bean class="java.lang.String" id="uploadPath">
 		<beans:constructor-arg
-			  value="D:\sts_work\Snack9duck\src\main\webapp\resources\" />  
+			  value="C:\Snack9duck\" />  
 			<!-- value="C:\javaStudy\apache-tomcat-9.0.52\wtpwebapps\Snack9uck\resources" />  --> 
 	</beans:bean>
 

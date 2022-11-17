@@ -5,32 +5,37 @@
 <%@ include file="../header.jsp"%>
 
 <div id="qna_view">
-      <aside>
-         <div class="management">
-            <div id="mypage_title">
-               <a class="text_deco">마이페이지</a>
-            </div>
-            <br>
-            <div class="mypage_list">
-               <a class="text_deco" href="#">구독 관리</a>
-            </div>
-            <div class="mypage_list">
-               <a class="text_deco" href="/qna/qnaList">1:1문의</a>
-            </div>
-            <div class="mypage_list">
-               <a class="text_deco" href="/member/my_page_form">회원정보 수정</a>
-               </li>
-            </div>
-            <br>
-            <!-- <div id="mypage_title">게시판</div> -->
-            <div class="mypage_list">
-               <a class="text_deco" href="/notice/notice_main">공지사항</a>
-            </div>
-            <div class="mypage_list">
-               <a class="text_deco" href="/event/event_main">이벤트</a>
-            </div>
-         </div>
-      </aside>
+      
+          <div class="management">
+			<div id="mypage_title">
+				<a class="text_deco">마이페이지</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/gudok_setting">구독 관리</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/cart/cart">장바구니</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/qna/qnaList">1:1문의</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/my_page_form">회원정보 수정</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/notice/notice_main">공지사항</a>
+			</div>
+			<div class="mypage_list">
+				<a class="text_deco" href="/event/event_main">이벤트</a>
+			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/logout">로그아웃</a>
+			</div>
+		</div>
+      
 <article>
 	<h2>1:1 문의</h2>
 	<h3>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>

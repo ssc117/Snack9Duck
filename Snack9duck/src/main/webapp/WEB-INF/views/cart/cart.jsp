@@ -47,6 +47,10 @@
 			<div class="mypage_list">
 				<a class="text_deco" href="/event/event_main">이벤트</a>
 			</div>
+			<br>
+			<div class="mypage_list">
+				<a class="text_deco" href="/member/logout">로그아웃</a>
+			</div>
 		</div>
 		<div id="orderform_1">
 			<form name="orderform" id="orderform" method="post" class="orderform"

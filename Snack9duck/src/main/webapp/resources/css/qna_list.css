@@ -6,21 +6,24 @@
 	justify-content : center;
 }
 .management {
-  width: 200px;
-  height: 300px;
-  margin-left: 300px;
-  margin-top: 20px;
-  margin-right: 60px;
-  padding: 30px 20px;
-  background: #fff;
-  border: 1px solid #d8d9de;
-  border-radius: 4px;
-  justify-content :center;
-  margin-bottom:220px;
+    
+    width: 200px;
+    height:500px;
+    margin-top: 50px;
+    margin-right: 60px;
+    
+    padding: 30px 20px;
+    
+    background: #fff;
+    border: 1px solid #d8d9de;
+    border-radius: 4px;
+    justify-content :center;
+    
+    
 }
 .text_deco{
-  text-decoration-line: none;
-  color: black;
+    text-decoration-line: none;
+    color: black;
 }
 #mypage_title{
   width:max-content;
