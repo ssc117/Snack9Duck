@@ -3,6 +3,13 @@
 margin: 0;
 padding: 0;
 }
+@font-face {
+  font-family: 'pretendard';
+  src: url(/resources/css/font/PretendardVariable.ttf);
+}
+body {
+	font-family: 'pretendard';
+}
 #header-first {
   max-width: 1300px;
   min-width: 1000px;

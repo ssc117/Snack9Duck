@@ -24,8 +24,8 @@
             	
                 <li><a href="/event/event_main" style="text-decoration: none;">이벤트</a></li>
                 <li><a href="/notice/notice_main" style="text-decoration: none;">공지사항</a></li>
-                <li><a href="javascript:void(0)" onclick="open_win('terms_of_service','update')"style="text-decoration: none;">이용약관</a></li>
-                <li><a href="javascript:void(0)" onclick="open_win('sign_up_privacy','update')"style="text-decoration: none;">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)" onclick="open_win('/terms_of_service','update')"style="text-decoration: none;">이용약관</a></li>
+                <li><a href="javascript:void(0)" onclick="open_win('/sign_up_privacy','update')"style="text-decoration: none;">개인정보처리방침</a></li>
                  <c:if test="${empty sessionScope.workerUser}">
                 <c:choose>
                 	<c:when test="${empty sessionScope.loginUser.id}">

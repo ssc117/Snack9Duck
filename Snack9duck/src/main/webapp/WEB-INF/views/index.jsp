@@ -26,7 +26,7 @@
     <!-- 정기구독버튼 -->
     <div class="button_div">
         <button type="button" class="img_btn">
-            <a href="#"><img src="/resources/img/Subscription.png"></a></button>
+            <a href="/product/gudok_list?kind=4"><img src="/resources/img/Subscription.png"></a></button>
     </div>
     <div class="margin"> </div>
     <div class="banner">
@@ -164,7 +164,7 @@
             </div>
         </div>
         <div class="anw">
-            <span>넵</span>
+            <span>언제든지 신청 가능합니다.</span>
         </div>
         <div class="que">
             <span>이번달에 결제가 되지않았어요. 왜 그런건가요?</span>
@@ -174,7 +174,7 @@
             </div>
         </div>
         <div class="anw">
-            <span>몰라유~</span>
+            <span>1:1문의 주시면 확인 후 처리해드리겠습니다.</span>
         </div>
     </div>
 

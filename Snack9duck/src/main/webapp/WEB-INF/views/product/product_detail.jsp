@@ -131,8 +131,6 @@
 					href="#detail-img-text-box" id="tab-img-text-a">상품정보</a></li>
 				<li class="active" id="tab-review"><a href="#detail-review-box"
 					id="tab-review-a">리뷰</a></li>
-				<li class="active" id="tab-qna"><a href="#detail-qna-box"
-					id="tab-qna-a">Q&amp;A</a></li>
 				<li class="active" id="tab-purchaseInfo"><a
 					href="#detail-purchaseInfo-box" id="tab-purchaseInfo-a">주문정보</a></li>
 			</ul>
@@ -168,7 +166,7 @@
 					<c:forEach var="reviewList" items="${reviewList}">
 						<div class="detail-qna-item">
 							<span class="detail-qna-item-number"><%=reviewNo %></span>
-							<a href=# target="_blank"><!-- 리뷰 디테일 진입 -->
+						<!-- 	<a href=# target="_blank">리뷰 디테일 진입 -->
 							<span class="detail-qna-item-detail">${reviewList.content}</span>
 							</a>
 							<span class="detail-qna-item-writerName">
@@ -189,23 +187,6 @@
 		</div>
 		<!-- 리뷰 끝 -->
 
-		<!-- Q&A 시작 -->
-		<div id="detail-qna-box">
-			<div class="detail-qna-header">
-				상품 문의
-				<c:if test="${sessionScope.principal != null}">
-					<a href="#" class="detail-qna-header-a" id="detail-qna-write">문의하기</a>
-				</c:if>
-				<a class="detail-qna-header-a" href="#">전체보기</a>
-			</div>
-			<div class="detail-qna-body">
-			
-				<div class="no_text">등록된 QNA가 없습니다.</div>
-			</div>
-
-		</div>
-		<!-- Q&A 끝 -->
-
 		<!-- 주문정보 시작 -->
 		<div id="detail-purchaseInfo-box">
 			<div class="detail-purchaseInfo-header">
@@ -221,15 +202,14 @@
 				</p>
 				<b>[ 교환/환불 정보 ]</b><br />
 				<p>
-					상품가치가 현저히 훼손된 경우를 제외한 모든 사유에 대해 환불이 가능합니다.<br /> 환불요청 가능 기간은 상품 수령
-					후(배송완료 시점으로부터) 7일 이내입니다.<br /> 교환/환불이 발생하는 경우 그 원인을 제공한 자가 배송비를
-					부담합니다.<br /> - 고객변심 : 최초 배송비+반품 배송비+(교환의 경우) 교환 배송비는 고객이 부담<br />
-					- 판매자귀책 : 최초 배송비+반품 배송비+(교환의 경우) 교환 배송비는 판매자가 부담<br /> 다음의 경우는
-					예외적으로 교환 및 환불이 불가능합니다.<br /> - 상품가치가 소비자의 귀책사유로 인해 현저하게 감소한 경우<br />
-					- 소비자 과실로 인한 옷의 변색(예 : 착색, 화장품, 오염 등)<br /> - 착용으로 인한 니트류 상품의 늘어남
-					발생 및 가죽 제품의 주름 발생<br /> - 기타 착용 흔적 : 택 제거 등<br /> - 구매확정된 주문의 경우<br />
-					- 귀금속류의 경우는 소비자분쟁조정기준에 의거 교환만 가능합니다.<br /> (단, 함량미달의 경우에는 환불이 가능함)<br />
-					구매자 단순변심은 상품수령후 7일이내(구매자 반품배송비 부담)
+					상품을 공급 받으신 날로부터 7일이내, 단순 변심으로 교환, 반품을 하실 경우 상품 왕복배송비용은 고객부담 (무료배송상품 포함)<br /> 
+- 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환/반품이 불가능합니다.<br /> 
+- 제품에 하자가 있는 경우, 제품 배송 즉시 판매자에게 사전 전화통화를 해야 하며 동의없이 임의 반품하는 경우 교환/반품이 제한될 수 있습니다.<br /> 
+- 상품 수령후 보관상 발생한 변질, 파손에 대해서는 교환/반품이 제한될 수 있습니다.<br /> 
+- 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 교환/반품이 제한될 수 있습니다.<br /> 
+- 냉장/냉동식품은 재판매가 불가능한 상품의 특성상, 단순 변심, 주문착오시 교환 및 반품이 어려운 점 양해 부탁드립니다.<br /> 
+- 상품에 따라 조금씩 맛이 다를 수 있으며, 개인의 기호에 따라 같은상품도 다르게 느껴질수 있기에 이로인한 교환/반품은 제한될 수 있습니다.<br /> 
+※ 상품의 판매가격은 당사의 판매정책에 따라 수시로 변동될 수 있으므로 이로인한 교환, 환불은 불가합니다.
 				</p>
 			</div>
 		</div>

@@ -362,3 +362,90 @@
 	margin: 0 4%;
 	padding: 20px;
 }
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p,
+span {
+  margin: 0;
+}
+
+a {
+  color: black;
+}
+
+.frame{
+text-align:center;	
+	
+}
+.title{
+	font-size:25px;
+}
+.table_wrap{
+	
+	text-align:center;
+	width:70%;
+}
+
+.cart {
+	
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+}
+
+
+
+table {
+  justify-content: center;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-collapse: collapse;
+  width: 80%;
+  font-size: 14px;
+  margin-left:350px; 
+  margin-right:auto;
+}
+
+thead {
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody {
+  font-size: 12px;
+}
+
+td {
+  padding: 10px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+.cart__list__detail :nth-child(3) a {
+  font-size: 12px;
+}
+
+.cart__list__detail :nth-child(3) p {
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+
+.cart__list__detail :nth-child(2),
+.cart__list__detail :nth-child(3),
+.cart__list__detail :nth-child(4),
+.cart__list__detail :nth-child(5),
+.cart__list__detail :nth-child(6),
+.cart__list__detail :nth-child(7),
+.cart__list__detail :nth-child(8) {
+  border-left: 2px solid whitesmoke;
+   text-align: center;
+}
+

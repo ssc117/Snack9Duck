@@ -27,7 +27,7 @@
 		</div>
 	</div> 	
 	
- <textarea id="review-detail" name="content"></textarea>
+ <textarea id="review-detail" name="content" maxlength="200"></textarea>
 <!--	<input type="text" value="" id="content" style=""/> -->	
 	<div class="qna-upload-btn" onclick="upload();" style="margin-bottom:100px">리뷰 등록</div>
 	
@@ -45,7 +45,10 @@ function upload() {
 	if(content.trim()==""){
 		alert("글 내용을 입력해주세요");
 		return false;
-	}
+	}if (content.length > 200) {
+    	alert('글자수는 200자까지 입력 가능합니다.');
+        return false;
+    }else
 	alert("리뷰가 등록되었습니다..");
 
 	//review_wirte.action = "/product/reviewwrite"; 

@@ -52,6 +52,8 @@
 			</div>
 		</div>
 	</div>
+	<button data-oper="list" class="btn btn-primary btn-sm">목록으로 돌아가기</button>
+</div>
 
 
 	<form id='operForm' action="/notice/notice_detail" method="get">
@@ -60,7 +62,6 @@
 			<input type="hidden" name="amount" value="${cri.amount}">
 			<input type="hidden" name="pageNum" value="${cri.pageNum}">
 			<input type="hidden" name="amount" value="${cri.amount}">
-			<button data-oper="list" class="btn btn-primary btn-sm">목록으로 돌아가기</button>
 	    </form>
 <script> 
 	$(document).ready(function() {
@@ -73,7 +74,8 @@
 		});
 	});
 </script>
-	
+	<div style="margin-bottom:100px;">
+	</div>
 </body>
 <%@ include file="../footer.jsp"%>
 </html>

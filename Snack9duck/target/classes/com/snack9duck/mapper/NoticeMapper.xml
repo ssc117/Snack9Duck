@@ -6,7 +6,7 @@
  <mapper namespace="com.snack9duck.mapper.NoticeMapper">
  <!--모든 공지사항 불러오기 -->
  <select id="getAdminList" resultType="com.snack9duck.domain.NoticeVO">
-<![CDATA[select * from noticeboard where noticeno > 0]]>
+<![CDATA[select * from noticeboard where noticeno > 0 ORDER BY noticeno desc]]>
 </select>
 
 <!-- 검색기능 -->
@@ -19,7 +19,7 @@
 							title like '%'||#{keyword}||'%'
 						</when>
 						<when test="type == 'C'.toString()">
-							content like '%'||#{keyword}||'%'
+							content like '%'||#{keyword}||'%' 
 						</when>
 						<when test="type == 'W'.toString()">
 							writer like '%'||#{keyword}||'%'
@@ -42,9 +42,9 @@
 			    where ]]>
 			    <include refid="criteria"></include>
 	<![CDATA[ 
-			     rownum <= #{pageNum} * #{amount}
+			     rownum <= #{pageNum} * #{amount} ORDER BY noticeno desc
 			)
-			where rn > (#{pageNum}-1) * #{amount}
+			where rn > (#{pageNum}-1) * #{amount} 
   	]]>
   </select>
   <!-- 페이징 토탈 가져오기 -->

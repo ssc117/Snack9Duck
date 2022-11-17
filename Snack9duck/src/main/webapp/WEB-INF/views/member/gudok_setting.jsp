@@ -61,10 +61,15 @@
     <section class="cart">
         <div class="cart__information">
             <ul>
-                <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
-                <li>설명설명.</li>
+                <li>구매한 상품을 취소하거나, 구매 내역을 삭제 할 수 있습니다.</li>
+                <li>배송지 변경 건은  회원정보에서 주소를 변경 후 1:1문의 해주세요.</li>
             </ul>
         </div>
+        <c:choose>
+					<c:when test="${gudokList.size() == 0}">
+						<h3 style="color: red; text-align: center;">구매내역이 없습니다.</h3>
+					</c:when>
+					<c:otherwise>
         <form name="gudokform" method="post">
         <table class="cart__list">
             <thead>
@@ -74,8 +79,8 @@
                         <td>수량</td>
                         <td>구매 정보</td>
                         <td>결제금액</td>
-                        <td>현재상태</td>
-                        <td>취소</td>
+                        <td>상태</td>
+                        <td>삭제/취소</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,7 +94,6 @@
                             <p>구매일 : <fmt:formatDate value="${gudokList.indate}" pattern="yyyy-MM-dd" /></p>
                             <p>요청사항 : ${gudokList.request} </p>
                             <p>배송지 :${gudokList.addr1}${gudokList.addr2}${gudokList.addr3}(${gudokList.zip_code})</p>
-                            <p>oseq:${gudokList.oseq } odseq:${gudokList.odseq} result:${gudokList.result}
                         </td>
                         <td><span class="price">
                         <fmt:formatNumber type="number" maxFractionDigits="3" 
@@ -115,8 +119,10 @@
  	       <input type="button" value="구매 취소 및 구매내역 삭제" onclick="gudok_cancel()" class="cart__bigorderbtn right">
  	       </div>
         </form>
+        </c:otherwise>
+        </c:choose>
     </section>
-    
+    </div>
     	<!-- Paging ------------------------->
  
 <div class="float-center">
@@ -141,7 +147,7 @@
     </ul>
 </div>
 
-</div>
+
 <!-- Paging End -->
 
 <form id='actionForm' action="/member/gudok_setting" method='get'>

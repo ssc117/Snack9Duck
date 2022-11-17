@@ -19,15 +19,15 @@
 <!-- header -->
 <%@ include file="../header.jsp"%>
 
-    <body>
-
+    
+	
         <div class="column">
             <div class="inner">
 
                 <div class="notice">
-                    <p></p>
+                    <br>
                     <h1 style="font-size:40px;">이벤트</h1>
-                    <p></p>
+                    <br>
                 </div>
 
             </div>
@@ -37,18 +37,18 @@
             ${event_detail.subject}</p>
         <p style="text-align:center; font-size:20px; font-weight:bold; color:gray ">
             ${event_detail.content}</p>
-
+		<div style='text-align : center;'>
         <img src="/snack9duck/${event_detail.mainimg}">
        
 
         <p></p>
 
         <div>
-            <a href="Snack9duckServlet?command=event_main">
-                <img src="img/btn.png">
+            <a href="/event/event_main">
+                <img src="/resources/img/btn.png">
             </a>
         </div>
-
+</div>
     </body>
 
 <!-- footer -->
