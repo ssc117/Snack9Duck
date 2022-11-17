@@ -255,12 +255,12 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		member = (MemberVO) session.getAttribute("loginUser");
 		
-//		orderService.orderviewDrop(id);
-//		orderService.ordersDrop(id);
-//		cartService.cartDrop(id);
-//		cartService.cartviewDrop(id);
-//		qnaService.qnaDrop(id);
-//		reviewService.reviewDrop(id);
+		orderService.orderviewDrop(member.getId());
+		orderService.ordersDrop(member.getId());
+		cartService.cartDrop(member.getId());
+		cartService.cartviewDrop(member.getId());
+		qnaService.qnaDrop(member.getId());
+		reviewService.reviewDrop(member.getId());
 		service.deleteMember(member);
 		session.removeAttribute("loginUser");
 		
