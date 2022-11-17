@@ -254,13 +254,14 @@ public class MemberController {
 	public String findMemberDeletePost(HttpServletRequest request, MemberVO member) throws Exception{
 		HttpSession session = request.getSession();
 		member = (MemberVO) session.getAttribute("loginUser");
-		
+		//회원탈퇴 전 모든 정보 삭제
 		orderService.orderviewDrop(member.getId());
 		orderService.ordersDrop(member.getId());
 		cartService.cartDrop(member.getId());
 		cartService.cartviewDrop(member.getId());
 		qnaService.qnaDrop(member.getId());
 		reviewService.reviewDrop(member.getId());
+		
 		service.deleteMember(member);
 		session.removeAttribute("loginUser");
 		
