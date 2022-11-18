@@ -112,7 +112,8 @@ margin-bottom: 50px;
                       <strong>배너 이미지</strong> <span class="star">*</span>
                   </div>
                   <div class="form_input">
-                    <input type="file" name="file" style="border:0 solid black; width: 700px; font-size: 18px;">
+                    <input type="file" name="file" accept="image/*"
+                    style="border:0 solid black; width: 700px; font-size: 18px;">
                   </div>
                 </div>
 
@@ -121,7 +122,8 @@ margin-bottom: 50px;
                       <strong>메인 이미지</strong> <span class="star">*</span>
                   </div>
                   <div class="form_input">
-                    <input type="file" name="file2" style="border:0 solid black; width: 700px; font-size: 18px;">
+                    <input type="file" name="file2" accept="image/*"
+                     style="border:0 solid black; width: 700px; font-size: 18px;">
                     
                   </div>
                 </div>

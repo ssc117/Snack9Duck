@@ -26,7 +26,6 @@ public class NoticeController {
 	@RequestMapping(value ="/notice_main", method = RequestMethod.GET)
 	public void getNoticeList(Criteria cri, Model model) throws Exception {
 		model.addAttribute("noticeList",service.getList(cri));
-		
 		int total = service.getTotal(cri);
 		model.addAttribute("pageMaker",new PageDTO(cri,total));
 		log.info("공지사항 목록 요청 :"+model);

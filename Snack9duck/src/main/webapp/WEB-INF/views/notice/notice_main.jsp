@@ -84,14 +84,22 @@
 	<div class="col-lg-12">
 		<form id="searchForm" action="/notice/notice_main" method="get">
 			<select name="type">
-				<option value="">전체보기</option>
-				<option value="T">제목</option>
-				<option value="C">내용</option>
-				<option value="TC">제목과 내용</option>
+				<option value=""
+				<c:out value="${pageMaker.cri.type == null?'selected':''}"/>
+				>전체보기</option>
+				<option value="T"
+				<c:out value="${pageMaker.cri.type eq 'T'?'selected':''}"/>
+				>제목</option>
+				<option value="C"
+				<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>
+				>내용</option>
+				<option value="TC"
+				<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>
+				>제목과 내용</option>
 			</select>
-			<input type="text" name="keyword" value="${pageMaker.cri.keyword}"/>
-			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>' />
+			<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+			<input type="hidden" name="amount" value='<c:out value="${pageMaker.cri.amount}"/>' />
 			<button class="btn btn-primary btn-sm">Search</button>
 		</form>
 	</div>
@@ -99,10 +107,10 @@
 <!-- 검색창 -->
 
 <form id='actionForm' action="/notice/notice_main" method='get'>
-	<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
-	<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
-	<input type="hidden" name="type" value="${pageMaker.cri.type}">
-    <input type="hidden" name="keyword" value="${pageMaker.cri.keyword}">
+	<input type='hidden' name='pageNum' value='<c:out value="${pageMaker.cri.pageNum}"/>' />
+	<input type='hidden' name='amount' value='<c:out value="${pageMaker.cri.amount}"/>' />
+	<input type="hidden" name="type" value='<c:out value="${pageMaker.cri.type}"/>' />
+    <input type="hidden" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>' />
 </form>
 
 <script>
